@@ -1,15 +1,19 @@
+
 body{
     margin: 0;
     font-family: "Roboto", sans-serif;
 }
 
+h4{
+    margin: 0;
+}
 
 .verde{
     color: #588157;
 }
 
 .texto-principal{
-    margin-left: 50px;
+    margin-left: 130px;
     margin-top: 50px;
     margin-bottom: 30px;
     width: 80%;
@@ -55,14 +59,77 @@ body{
 
 .ventana-1{
     background-color: #D9D9D9;
-    width: 18%;
-    height: 80vh;
+    width: 700px;
 
 }
 
-.ventana-1 ul{list-style: none;margin-top: 40px;font-weight: 600;}
+.ventana-1 ul{list-style: none;margin-top: 40px;font-weight: 600;margin-left: 90px;}
 
 .ventana-1 ul li{margin-bottom: 8px;}
 
 .header-ul{color:#344E41;font-size:25px;font-weight: 900;margin-bottom: 8px;
-    border-bottom: 3px solid #344E41;width: 70%;}
+    border-bottom: 3px solid #344E41;width: 80%;}
+
+
+.cartas{
+    margin: 50px;
+    margin-left: 150px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    gap: 30px;
+}
+
+.carta{
+    background-color: #EEEEEE;
+    width: 270px;
+    height: 460px;
+    box-shadow: 0 8px 10px 5px rgba(0, 0, 0, 0.3); /* sombra */
+}
+
+.carta-sup{
+    height: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1d1d1;
+}
+
+.carta-sup img{
+    height: 90%;
+}
+
+.carta-inf{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 6px;
+    padding:20px 20px;
+}
+
+.carta-titulo-principal h4{
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.carta-titulo-secundario h4{
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.carta-precio{
+    font-weight: 700;
+    color: #003c1e;
+    font-size: 25px;
+  
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #A3B18A;
+    text-align: center;
+    border-radius: 15px;
+    height: 35px;
+}
