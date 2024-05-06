@@ -207,16 +207,6 @@ label{
     padding-left: 10px; /* Espacio entre el borde izquierdo y el texto */
 }
 
-.cont_izq_dentro h1:before {
-    /* Pseudo-elemento :before para crear la línea vertical */
-    content: '';
-    position: absolute;
-    left: 0; /* Coloca la línea al principio del contenedor */
-    top: 0; /* Alinea la línea con la parte superior del contenedor */
-    height: 100%; /* Estira la línea a lo largo de todo el contenedor */
-    width: 6px; /* Ancho de la línea */
-    background-color: #588157; /* Color de la línea */
-}
 
 .contacto:before {
     /* Estilos específicos para el texto 'CONTACTO' */
