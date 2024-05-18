@@ -5,3 +5,10 @@ hamburger.addEventListener("click", () => {
     navList.classList.toggle("active");
 
 })
+
+let typed = new Typed(".home-title",{
+    strings : ["#DESAFIATUCUERPO"],
+    typeSpeed : 150,
+    backSpeed : 150,
+    loop : true
+})
