@@ -13,7 +13,6 @@ a:active {
 li a{
     color: white;
     font-weight: 300;
-    padding: 10px 15px;
 }
 #but_shop a:hover{
     background-color: red;
@@ -48,7 +47,7 @@ h1{
     font-size: 80px;
     text-align: left;
 }
-body{
+.container{
     margin: auto;
     width: 100%;
     font-size: 15px;
@@ -103,9 +102,6 @@ body > nav > ul > li:nth-child(4) > a{
     list-style: none;
     gap: 50px;
 }
-.menu a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Cambia el color de fondo al pasar el mouse */
-  }
 .main1{
     grid-area: main1;
 }
@@ -113,7 +109,7 @@ body > nav > ul > li:nth-child(4) > a{
     grid-area: main2;
 }
 .contenedor{
-    max-width: 700px;
+    width: 700px;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
@@ -136,8 +132,8 @@ body > nav > ul > li:nth-child(4) > a{
     background: #3A5A40;
     border-radius: 30px;
 }
-.cont_gim{
-    width: 100%;
+.cont_gim,.cont_tienda{
+    width: 50%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -165,36 +161,15 @@ body > nav > ul > li:nth-child(4) > a{
     flex-direction: column;
     flex-wrap: nowrap;
     gap: 15px;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 100px;
 }
 /* INPUT FORMULARIO*/
 .formulario_shop{
-    width: 90%;
+    width: 350px;
     height: 35px;
     background-color: #D9D9D9;
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
-}
-#imagen{
-    text-align: center;
-}
-/*RADIO BUTTONS*/
-.radio-group {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.radio-label {
-    margin-right: 20px; /* Espacio entre los grupos de radio buttons */
-}
-.radio-label input {
-    margin-left: 5px; /* Espacio entre los grupos de radio buttons */
-}
-
-.radius_formulario {
-    margin-right: 5px; /* Espacio entre el radio button y el texto */
 }
 label{
     height: 30px;
@@ -203,7 +178,7 @@ label{
     font-weight: 600;
 }
 #but_shop{
-    width: 90%;
+    width: 350px;
     background: #588157;
     margin-left: auto;
     margin-right: auto;
@@ -215,11 +190,12 @@ label{
     margin-top: 30px;
     cursor: pointer;
 }
-#but_shop:hover{
-    background-color: grey;
-}
 
 /*IMAGEN*/
+
+.cont_izq_dentro{
+    margin-top: 50px;
+}
 .cont_izq_dentro img{
     max-width: 100%;
     width: 70%;
@@ -227,21 +203,10 @@ label{
 
 
 .cont_izq_dentro h1 {
-    /* Estilo común para ambos h1 */
-    position: relative; /* Para permitir posicionar la línea vertical */
+    border-left: 5px solid #588157;
     padding-left: 10px; /* Espacio entre el borde izquierdo y el texto */
 }
 
-.cont_izq_dentro h1:before {
-    /* Pseudo-elemento :before para crear la línea vertical */
-    content: '';
-    position: absolute;
-    left: 0; /* Coloca la línea al principio del contenedor */
-    top: 0; /* Alinea la línea con la parte superior del contenedor */
-    height: 100%; /* Estira la línea a lo largo de todo el contenedor */
-    width: 6px; /* Ancho de la línea */
-    background-color: #588157; /* Color de la línea */
-}
 
 .contacto:before {
     /* Estilos específicos para el texto 'CONTACTO' */
@@ -253,108 +218,4 @@ label{
     /* Estilos específicos para el texto 'AYUDA' */
     /* Puedes ajustar estos estilos según sea necesario */
     background-color: #588157; /* Color de la línea */
-}
-
-footer{
-    background-color: rgba(58, 90, 64, 1);
-    color: white;
-    padding: 20px 0;
-    grid-area: footer;
-}
-.footer_texto{
-    width: 100%;
-    text-align: center;
-}
-
-.result_formulario {
-    display: none;
-    width: 100%;
-    padding: 20px;
-    overflow: hidden;
-    color: #fff;
-    background-color: red;
-    text-align: center;
-    position: fixed;
-    top: 0px;
-    right: 0px;
-    font-size: 1.2em;
-}
-
-
-
-
-
-/* TELEFONO MEDIDAS */
-@media only screen and (min-width: 10px) and (max-width: 600px) {
-    body{
-        max-width: 100% ;
-        grid-template-areas: 
-        "banner"
-        "nav"
-        "main1"
-        "main2"
-        "footer";
-    }
-    .cont_izq_dentro h1{
-        padding-left: 20px;
-    }
-    .banner{
-        grid-area: banner;
-        height: 60px;
-        font-size: 20px;
-    }
-    .banner img{
-        width: 40px;
-    }
-    nav{
-       grid-area: nav;
-    }
-    header{
-        display: none;
-    }
-    .main1{
-        grid-area: main1;
-    
-    }
-    .main2{
-        grid-area: main2;
-       
-    }
-    .cont_izq_dentro{
-        width: 90%;
-    }
-    .cont_izq_fondo{
-        padding: 20px;
-    }
-    .cont_izq_dentro img{
-        width: 80%;
-    }
-    .contenedor{
-       width: 600px;
-       height: auto;
-       margin-bottom: 50px;
-    }
-    .cont_izq_form{
-        width: 90%;
-    }
-    .formulario{
-        margin: 0;
-        width: 100%;
-    }
-    .cont_izq_dentro_eligeform{
-        height: 50px;
-    }
-    .cont_izq_dentro h3{
-        font-size: 1.7em;
-    }
-    label {
-    height: 50px;
-    line-height: 50px;
-    font-size: 1.4em;
-    font-weight: 600;
-    }
-    .formulario_shop{
-        height: 50px;
-    }
-
 }
