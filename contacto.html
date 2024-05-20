@@ -55,28 +55,39 @@
     <article class="main2">
         <div class="contenedor">
             <div class="cont_izq_form">
-                <form class="formulario">
+                <form class="formulario" action="">
                     <div class="cont_izq_dentro cont_izq_dentro_eligeform">
                         <div class="cont_gim">
-                            <h3>GIMNASIO</h3>
-                        </div>
-                        <div class="cont_tienda">
-                            <h3>TIENDA</h3>
+                            <h3>FORMULARIO</h3>
                         </div>
                     </div>
                     <label>Nombre</label>
                     <input type="text" class="formulario_shop" id="nombre" name="nombre" value="">
                     <label>Apellido</label>
                         <input type="text" class="formulario_shop" id="apellido" name="apellido" value="">
-                    <label >Telefono</label>
+                    <label>Telefono</label>
                         <input type="number" class="formulario_shop" id="telefono" name="telefono" value="">
                     <label>Correo Electronico</label>
                         <input type="email" class="formulario_shop" id="correo" name="correo" value="">
-                    <label>Problema</label>
-                        <textarea class="formulario_shop" id="problema" name="problema" cols="30" rows="10"></textarea>
+                    <label for="select_campo">Su consulta esta relacionada con:</label>
+                        <select name="select_campo" id="select_campo" class="formulario_shop">
+                            <option value=""></option>
+                            <option value="gimnasio">GIMNASIO</option>
+                            <option value="tienda_online">TIENDA ONLINE</option>
+                        </select>
+                    <label>Es cliente?</label>
+                    <div class="radio-group">
+                        <label class="radio-label">Si<input type="radio" class="radius_formulario" id="butsi" name="radio_but" value=""></label>
+                        <label class="radio-label">No<input type="radio" class="radius_formulario" id="butno" name="radio_but" value=""></label>
+                    </div>
+                    <label>Adjunte Imagen</label>
+                    <input type="file" class="formulario_shop" id="imagen" name="imagen" accept="image/*" required >
+                    <label>Ingrese su consulta</label>
+                        <textarea class="formulario_shop" id="problema" name="problema" value="" cols="30" rows="10"></textarea>
                     <input type="button" name="but_envia_shop" id="but_shop" value="Enviar">
                 </form>
             </div>
+            <div class="result_formulario"></div>
         </div>
     </article>
 </div>
