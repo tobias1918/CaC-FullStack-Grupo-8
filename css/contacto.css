@@ -129,14 +129,12 @@ body > nav > ul > li:nth-child(4) > a{
     background: #3A5A40;
     border-radius: 30px;
 }
-.cont_gim,.cont_tienda{
-    width: 50%;
+.cont_gim{
+    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-.cont_gim{
     background: #7D9970;
     border-radius: 30px;
 }
