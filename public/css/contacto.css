@@ -1,0 +1,254 @@
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+li a{
+    color: white;
+    font-weight: 300;
+}
+input{
+    border-style: none;
+    text-align: center;
+}
+*:focus {
+ outline: none;
+}
+input[type="submit"],
+button{
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+}
+input[type="text"],
+button{
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+}
+input[type="button"],
+button{
+-webkit-appearance: none;
+-webkit-border-radius: 0;
+}	
+*{
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+h1{
+    font-size: 80px;
+    text-align: left;
+}
+.container{
+    margin: auto;
+    width: 100%;
+    font-size: 15px;
+	display: grid;
+	grid-template-areas: 
+    "banner banner"
+	"header nav"
+	"main1 main2"
+	"footer footer";
+}
+.banner {
+    display: flex;
+    height: 40px;
+    color: white;
+    font-weight: 600;
+    background-color: #DAD7CD;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    color: #588157;
+    grid-area: banner;
+}
+.banner img{
+    width: 30px;
+    margin-top: 20px;
+  }
+  .banner a{
+    margin-left: 15px;
+  }
+header{
+    height: 50px;
+    grid-area: header;
+    background-color: #3A5A40;
+}
+nav{
+    height: 50px;
+    grid-area: nav;
+    background-color: #3A5A40;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+body > nav > ul > li:nth-child(4) > a{
+    font-weight: 600;
+}
+.menu{
+    flex-direction: row;
+    display: flex;
+    list-style: none;
+    gap: 50px;
+}
+.main1{
+    grid-area: main1;
+}
+.main2{
+    grid-area: main2;
+}
+.contenedor{
+    width: 700px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.cont_izq_dentro{
+    width: 70%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+.cont_izq_dentro_eligeform{
+    display: flex;
+    height: 45px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: #3A5A40;
+    border-radius: 30px;
+}
+.cont_gim{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #7D9970;
+    border-radius: 30px;
+}
+.cont_izq_fondo{
+    padding: 30px;
+    border-radius: 30px;
+    background-color: #D1D9C4;
+    text-align: left;
+}
+/*FORMULARIO */
+.cont_izq_form{
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 15px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+/* INPUT FORMULARIO*/
+.formulario_shop{
+    width: 90%;
+    height: 35px;
+    background-color: #D9D9D9;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#imagen{
+    text-align: center;
+}
+/*RADIO BUTTONS*/
+.radio-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.radio-label {
+    margin-right: 20px; /* Espacio entre los grupos de radio buttons */
+}
+.radio-label input {
+    margin-left: 5px; /* Espacio entre los grupos de radio buttons */
+}
+
+.radius_formulario {
+    margin-right: 5px; /* Espacio entre el radio button y el texto */
+}
+label{
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+}
+#but_shop{
+    width: 90%;
+    background: #588157;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    border-radius: 30px;
+    font-size: 1.1em;
+    border-style: none;
+    height: 40px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+#but_shop:hover{
+    background-color: grey;
+}
+
+/*IMAGEN*/
+
+.cont_izq_dentro{
+    margin-top: 50px;
+}
+.cont_izq_dentro img{
+    max-width: 100%;
+    width: 70%;
+}
+
+
+.cont_izq_dentro h1 {
+    border-left: 5px solid #588157;
+    padding-left: 10px; /* Espacio entre el borde izquierdo y el texto */
+}
+
+
+.contacto:before {
+    /* Estilos específicos para el texto 'CONTACTO' */
+    /* Puedes ajustar estos estilos según sea necesario */
+    background-color: #588157; /* Color de la línea */
+}
+
+.ayuda:before {
+    /* Estilos específicos para el texto 'AYUDA' */
+    /* Puedes ajustar estos estilos según sea necesario */
+    background-color: #588157; /* Color de la línea */
+}
+
+.result_formulario {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    overflow: hidden;
+    color: #fff;
+    background-color: red;
+    text-align: center;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    font-size: 1.2em;
+}
