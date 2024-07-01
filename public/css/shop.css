@@ -74,6 +74,10 @@ h4{
 
 .ventana-1 ul li{margin-bottom: 8px;}
 
+.ventana-2{
+    min-width: 65%;
+}
+
 .header-ul{color:#344E41;font-size:25px;font-weight: 900;margin-bottom: 8px;
     border-bottom: 3px solid #344E41;width: 80%;}
 
@@ -87,56 +91,75 @@ h4{
     gap: 30px;
 }
 
-.carta{
+.carta {
     background-color: #EEEEEE;
-    width: 270px;
+    max-width: 270px;
     height: 460px;
-    box-shadow: 0 8px 10px 5px rgba(0, 0, 0, 0.3); /* sombra */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 10px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    border-radius: 10px; /* added to match the corners */
 }
 
-.carta-sup{
-    height: 65%;
+.carta-sup {
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #d1d1d1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    overflow: hidden;
 }
 
-.carta-sup img{
-    height: 90%;
+.carta-sup img {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
 }
 
-.carta-inf{
+.carta-inf {
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
-    gap: 6px;
-    padding:20px 20px;
+    justify-content: space-between;
+    flex-grow: 1;
 }
 
-.carta-titulo-principal h4{
+.carta-titulo-principal h4 {
     font-weight: 500;
     font-size: 15px;
+    margin-bottom: 5px;
 }
 
-.carta-titulo-secundario h4{
+.carta-titulo-secundario h4 {
     font-weight: 700;
     font-size: 18px;
+    margin-bottom: 10px;
 }
 
-.carta-precio{
+.carta-precio {
     font-weight: 700;
     color: #003c1e;
     font-size: 25px;
-  
+    margin-bottom: 15px;
 }
 
-.button{
+.button {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #A3B18A;
+    color: white;
     text-align: center;
     border-radius: 15px;
-    height: 35px;
+    height: 40px;
+    cursor: pointer;
+    margin-top: auto; /* ensures the button is at the bottom */
+}
+
+.button:hover {
+    background-color: #7F9177;
 }
