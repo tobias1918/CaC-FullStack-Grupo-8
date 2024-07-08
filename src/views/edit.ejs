@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Producto</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav-footer-menu.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Maven+Pro:wght@500;800;900&family=Oswald:wght@500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="js/style.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/admin">Admin</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5" style="margin-top: 80px;margin-bottom: 80px;">
+        <h1 class="mb-4">Editar Producto</h1>
+        
+        <form action="/editarProducto/<%= producto.id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" value="<%= producto.nombre %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea class="form-control" id="descripcion" name="descripcion" required><%= producto.descripcion %></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">URL de la Imagen:</label>
+                <input type="text" class="form-control" id="imagen" name="imagen" value="<%= producto.imagen %>" required>
+            </div>
+
+            <div class="form-group">
+                <label for="marca_id">Marca:</label>
+                <select class="form-control" id="marca_id" name="marca_id" required>
+                    <% marcas.forEach(marca => { %>
+                        <option value="<%= marca.id %>" <%= marca.id === producto.marca_id ? 'selected' : '' %>><%= marca.nombre %></option>
+                    <% }); %>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="categoria_id">Categoría:</label>
+                <select class="form-control" id="categoria_id" name="categoria_id" required>
+                    <% categorias.forEach(categoria => { %>
+                        <option value="<%= categoria.id %>" <%= categoria.id === producto.categoria_id ? 'selected' : '' %>><%= categoria.nombre %></option>
+                    <% }); %>
+                </select>
+            </div>
+            
+
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+    <footer>
+        <h4>Redes sociales</h4>
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram-square"></i></a>
+        <p>Derechos de autor &copy; 2024 Grupo 8 CaC. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Bootstrap JS y cualquier otro script necesario -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

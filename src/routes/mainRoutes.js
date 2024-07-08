@@ -1,80 +1,21 @@
 const express = require('express');
 const router = express.Router();
+const productoController = require('../controllers/productoController');
+const consultaController = require('../controllers/consultaController');
 
-const { conn } = require('../db/dbconnection'); // Importa la conexión desde tu módulo
 
-router.get('/shop', async (req, res) => {
-    try {
-        const sqlQuery = `
-            SELECT p.id, p.nombre, p.descripcion,p.precio,p.imagen,
-                   m.id as marca_id, m.nombre as nombre_marca, m.descripcion as desc_marca,
-                   c.id as categoria_id, c.nombre as nombre_categoria
-            FROM Producto p
-            INNER JOIN Marca m ON p.marca_id = m.id
-            INNER JOIN Categoria c ON p.categoria_id = c.id
-        `;
-        const [rows] = await conn.query(sqlQuery);
+// Rutas
+router.get('/',productoController.getHome);
+router.get('/home',productoController.getHome);
+router.get('/sobreNosotros',productoController.getSobreNosotros);
+router.get('/admin', productoController.getAllProductos);
+router.get('/shop', productoController.getAllProductosTienda);
+router.post('/crearProducto', productoController.crearProducto);
+router.get('/editarProducto/:id', productoController.editarProductoForm);
+router.put('/editarProducto/:id', productoController.editarProducto);
+router.post('/eliminarProducto/:id', productoController.eliminarProducto);
 
-        // Formatear json
-        const productos = rows.map(row => ({
-            id: row.id,
-            nombre: row.nombre,
-            descripcion: row.descripcion,
-            precio:row.precio,
-            imagen:row.imagen,
-            marca_id: {
-                id: row.marca_id,
-                nombre: row.nombre_marca,
-                descripcion: row.desc_marca
-            },
-            categoria_id: {
-                id: row.categoria_id,
-                nombre: row.nombre_categoria
-            }
-        }));
-
-        res.render('shop',{productos:productos});
-    } catch (err) {
-        console.error('Error al obtener productos:', err);
-        res.status(500).send('Error al obtener productos');
-    }
-});
-
-router.get('/productos', async (req, res) => {
-    try {
-        const sqlQuery = `
-            SELECT p.id, p.nombre, p.descripcion,p.precio,p.imagen,
-                   m.id as marca_id, m.nombre as nombre_marca, m.descripcion as desc_marca,
-                   c.id as categoria_id, c.nombre as nombre_categoria
-            FROM Producto p
-            INNER JOIN Marca m ON p.marca_id = m.id
-            INNER JOIN Categoria c ON p.categoria_id = c.id
-        `;
-        const [rows] = await conn.query(sqlQuery);
-
-        // Formatear json
-        const productos = rows.map(row => ({
-            id: row.id,
-            nombre: row.nombre,
-            descripcion: row.descripcion,
-            precio:row.precio,
-            imagen:row.imagen,
-            marca_id: {
-                id: row.marca_id,
-                nombre: row.nombre_marca,
-                descripcion: row.desc_marca
-            },
-            categoria_id: {
-                id: row.categoria_id,
-                nombre: row.nombre_categoria
-            }
-        }));
-
-        res.json(productos);
-    } catch (err) {
-        console.error('Error al obtener productos:', err);
-        res.status(500).send('Error al obtener productos');
-    }
-});
+router.get('/contacto',consultaController.getContacto);
+router.post('/crearConsulta',consultaController.crearConsulta);
 
 module.exports = router;

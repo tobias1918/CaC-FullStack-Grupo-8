@@ -16,10 +16,11 @@
     <header>
         <nav>
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="sobre_nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="/home">Inicio</a></li>
+                <li><a href="/shop">Shop</a></li>
+                <li><a href="/sobreNosotros">Sobre Nosotros</a></li>
+                <li><a href="/contacto">Contacto</a></li>
+                <li><a href="/admin">Admin</a></li>
             </ul>
             <div class="menu-toggle">
                 <i class="fas fa-bars"></i>
@@ -30,34 +31,18 @@
     <main>
         <div class="texto-principal">
             <div class="texto">
-            <h1>NUESTRO</h1>
-            <h2 class="verde">SHOP</h2>
+                <h1>NUESTRO</h1>
+                <h2 class="verde">SHOP</h2>
             </div>
             <img src="img/carrito.png" alt="carrito">
-            
         </div>
+        
         <div class="buscador">
             <input type="text" class="buscar" placeholder="Busca nuestros productos..">
         </div>
 
         <div class="ventanas">
-            <div class="ventana-1">
-                <ul>
-                    <li class="header-ul">CATEGORIAS</li>
-                    <li>Suplementos</li>
-                    <li>Creatina</li>
-                    <li>Proteina</li>
-                    <li>Barras proteicas</li>
-                    <li>Ganadores de masa</li>
-                </ul>
-                <ul>
-                    <li class="header-ul">FILTRAR</li>
-                    <li>Precio</li>
-                    <li>Sabor</li>
-                    <li>Marca</li>
-                    <li>Ordenar</li>
-                </ul>
-            </div>
+            
             <div class="ventana-2">
                 <div class="cartas">
                     <% productos.forEach((producto) => { %>
@@ -66,15 +51,14 @@
                                 <img src="<%= producto.imagen %>" alt="">
                             </div>
                             <div class="carta-inf">
+                                <div class="carta-titulo-secundario"><h4><%= producto.marca.nombre %></h4></div>
                                 <div class="carta-titulo-principal"><h4><%= producto.nombre %></h4></div>
-                                <div class="carta-titulo-secundario"><h4><%= producto.marca_id.nombre %></h4></div>
-                                <div class="carta-precio"><h4>$<%= producto.precio %></h4></div>
-                                <div class="button"><h4>Agregar al carrito</h4></div>
+                                <div class="button"><h4>Agregar al carrito</h4></div> 
+                              
                             </div>
                         </div>
                     <% }) %>
                 </div>
-                
             </div>
         </div>
     </main>
@@ -85,7 +69,6 @@
         <a href="#"><i class="fab fa-instagram-square"></i></a>
         <p>Derechos de autor &copy; 2024 Grupo 8 CaC. Todos los derechos reservados.</p>
     </footer>
-
     
 </body>
 </html>

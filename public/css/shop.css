@@ -64,18 +64,10 @@ h4{
 
 }
 
-.ventana-1{
-    background-color: #D9D9D9;
-    width: 700px;
-
-}
-
-.ventana-1 ul{list-style: none;margin-top: 40px;font-weight: 600;margin-left: 90px;}
-
-.ventana-1 ul li{margin-bottom: 8px;}
 
 .ventana-2{
-    min-width: 65%;
+    width: 100%;
+    background-color: #344E41;
 }
 
 .header-ul{color:#344E41;font-size:25px;font-weight: 900;margin-bottom: 8px;
@@ -89,12 +81,13 @@ h4{
     flex-wrap: wrap;
     justify-content: start;
     gap: 30px;
+  
 }
 
 .carta {
     background-color: #EEEEEE;
     max-width: 270px;
-    height: 460px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -108,7 +101,7 @@ h4{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #d1d1d1;
+    background-color: #ffffff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow: hidden;
@@ -123,8 +116,8 @@ h4{
 .carta-inf {
     padding: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: space-between;
+    flex-direction: column;
     flex-grow: 1;
 }
 
@@ -157,7 +150,7 @@ h4{
     border-radius: 15px;
     height: 40px;
     cursor: pointer;
-    margin-top: auto; /* ensures the button is at the bottom */
+    margin-top: 0;
 }
 
 .button:hover {
